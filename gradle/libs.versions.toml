@@ -13,6 +13,7 @@ hilt = "2.59.2"
 ksp = "2.2.10-2.0.2"
 room = "2.7.0"
 retrofit = "2.11.0"
+okhttp = "4.12.0"
 retrofitSerializationConverter = "0.8.0"
 kotlinxSerializationJson = "1.7.3"
 junitJupiter = "5.11.0"
@@ -51,7 +52,8 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 
 # Retrofit + Serialization
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-retrofit-converter-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitSerializationConverter" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+retrofit-converter-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
 # Testing
