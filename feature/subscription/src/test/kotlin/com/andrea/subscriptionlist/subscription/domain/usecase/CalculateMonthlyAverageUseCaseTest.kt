@@ -1,7 +1,7 @@
 package com.andrea.subscriptionlist.subscription.domain.usecase
 
-import com.andrea.subscriptionlist.subscription.domain.model.Currency
-import com.andrea.subscriptionlist.subscription.domain.model.ExchangeRate
+import com.andrea.subscriptionlist.core.common.Currency
+import com.andrea.subscriptionlist.exchangerate.domain.model.ExchangeRate
 import com.andrea.subscriptionlist.subscription.domain.model.Subscription
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull

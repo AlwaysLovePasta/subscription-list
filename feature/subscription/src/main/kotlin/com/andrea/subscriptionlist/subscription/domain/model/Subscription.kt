@@ -1,5 +1,6 @@
 package com.andrea.subscriptionlist.subscription.domain.model
 
+import com.andrea.subscriptionlist.core.common.Currency
 import java.time.LocalDate
 
 data class Subscription(

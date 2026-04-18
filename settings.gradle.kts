@@ -25,6 +25,7 @@ dependencyResolutionManagement {
 rootProject.name = "Subscription List"
 include(":app")
 include(":feature:subscription")
+include(":feature:exchange-rate")
 include(":core:common")
 include(":core:data")
 include(":core:ui")

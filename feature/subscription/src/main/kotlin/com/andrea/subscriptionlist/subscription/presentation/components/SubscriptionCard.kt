@@ -31,8 +31,8 @@ import com.andrea.subscriptionlist.core.ui.theme.InkDeep
 import com.andrea.subscriptionlist.core.ui.theme.InkLight
 import com.andrea.subscriptionlist.core.ui.theme.InkMid
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
-import com.andrea.subscriptionlist.subscription.domain.model.Currency
-import com.andrea.subscriptionlist.subscription.presentation.SubscriptionItemUiModel
+import com.andrea.subscriptionlist.core.common.Currency
+import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionItemUiModel
 import java.text.NumberFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

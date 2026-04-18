@@ -28,7 +28,7 @@ import com.andrea.subscriptionlist.core.ui.theme.InkDeep
 import com.andrea.subscriptionlist.core.ui.theme.InkMid
 import com.andrea.subscriptionlist.core.ui.theme.Parchment
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
-import com.andrea.subscriptionlist.subscription.presentation.SortOrder
+import com.andrea.subscriptionlist.subscription.presentation.list.SortOrder
 
 @Composable
 fun SortPill(

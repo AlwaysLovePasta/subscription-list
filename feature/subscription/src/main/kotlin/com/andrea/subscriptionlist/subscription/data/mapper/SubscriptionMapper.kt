@@ -1,7 +1,7 @@
 package com.andrea.subscriptionlist.subscription.data.mapper
 
+import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.subscription.data.local.SubscriptionEntity
-import com.andrea.subscriptionlist.subscription.domain.model.Currency
 import com.andrea.subscriptionlist.subscription.domain.model.Subscription
 import java.time.LocalDate
 
