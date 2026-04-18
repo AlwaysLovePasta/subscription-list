@@ -68,7 +68,7 @@ fun SubscriptionListScreen(
                     Column {
                         Text(
                             text = "Subscriptions",
-                            style = MaterialTheme.typography.headlineMedium,
+                            style = MaterialTheme.typography.titleLarge,
                             color = InkDeep,
                         )
                         if (itemCount != null && itemCount > 0) {
