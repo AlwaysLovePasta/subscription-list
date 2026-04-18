@@ -17,13 +17,13 @@ val Geist = FontFamily(
     Font(R.font.geist_bold,     weight = FontWeight.Bold),
 )
 
-// TODO: replace with bundled font once instrument_serif_italic.ttf is placed in res/font/
-//   Download: Google Fonts → "Instrument Serif" → Italic
-val InstrumentSerif = FontFamily.Serif
+val InstrumentSerif = FontFamily(
+    Font(R.font.instrument_serif_italic, FontWeight.Normal)
+)
 
-// TODO: replace with bundled font once geist_mono_regular/medium.ttf are placed in res/font/
-//   Download: github.com/vercel/geist-font → GeistMono/static/
-val GeistMono = FontFamily.Monospace
+val GeistMono = FontFamily(
+    Font(R.font.geist_mono_medium, FontWeight.Normal)
+)
 
 // ── Typography scale (mapped from Design System) ──────────────────────────────
 //
