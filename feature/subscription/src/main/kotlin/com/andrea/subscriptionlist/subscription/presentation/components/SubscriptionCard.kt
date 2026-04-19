@@ -52,8 +52,8 @@ fun SubscriptionCard(
         val nf = NumberFormat.getNumberInstance().apply { maximumFractionDigits = 0 }
         item.monthlyAmountTwd?.let { "NT$${nf.format(it)}" } ?: "NT$—"
     }
-    val priceText = remember(item.price, item.currency) {
-        "${item.currency.name} ${"%.2f".format(item.price)}/mo"
+    val priceText = remember(item.price, item.currency, item.billingCycleMonths) {
+        "${item.currency.name} ${"%.2f".format(item.price / item.billingCycleMonths)}/mo"
     }
     val daysText = remember(daysUntil, item.nextBillingDate) {
         "${daysUntil}d until ${item.nextBillingDate.format(BillingDateFormatter)}"

@@ -8,7 +8,6 @@ import com.andrea.subscriptionlist.exchangerate.domain.model.ExchangeRate
 import com.andrea.subscriptionlist.exchangerate.domain.usecase.GetExchangeRatesUseCase
 import com.andrea.subscriptionlist.subscription.domain.model.Subscription
 import com.andrea.subscriptionlist.subscription.domain.usecase.AddSubscriptionUseCase
-import com.andrea.subscriptionlist.subscription.domain.usecase.CalculateMonthlyAverageUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.DeleteSubscriptionUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.GetSubscriptionsUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.UpdateSubscriptionUseCase
@@ -30,7 +29,6 @@ class SubscriptionFormViewModel @Inject constructor(
     private val updateSubscription: UpdateSubscriptionUseCase,
     private val deleteSubscription: DeleteSubscriptionUseCase,
     private val getExchangeRates: GetExchangeRatesUseCase,
-    private val calculateMonthlyAverage: CalculateMonthlyAverageUseCase,
 ) : ViewModel() {
 
     private val subscriptionId: String? = savedStateHandle["subscriptionId"]
