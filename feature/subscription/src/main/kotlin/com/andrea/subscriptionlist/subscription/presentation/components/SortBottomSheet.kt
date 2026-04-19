@@ -24,12 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import com.andrea.subscriptionlist.subscription.presentation.list.SortOrder
 
@@ -56,7 +51,7 @@ fun SortBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = Parchment,
+        containerColor = ThemeColor.Parchment,
     ) {
         SortBottomSheetContent(
             currentOrder = currentOrder,
@@ -75,7 +70,7 @@ private fun SortBottomSheetContent(
         Text(
             text = "SORT BY",
             style = MaterialTheme.typography.labelMedium,
-            color = InkMid,
+            color = ThemeColor.InkMid,
             modifier = Modifier.padding(horizontal = 24.dp, vertical = 8.dp),
         )
         SortOptions.forEachIndexed { index, option ->
@@ -86,7 +81,7 @@ private fun SortBottomSheetContent(
             )
             if (index < SortOptions.lastIndex) {
                 HorizontalDivider(
-                    color = BorderSubtle,
+                    color = ThemeColor.BorderSubtle,
                     modifier = Modifier.padding(horizontal = 24.dp),
                 )
             }
@@ -101,7 +96,7 @@ private fun SortOptionRow(
     isSelected: Boolean,
     onClick: () -> Unit,
 ) {
-    val textColor = if (isSelected) AccentGreen else InkDeep
+    val textColor = if (isSelected) ThemeColor.AccentGreen else ThemeColor.InkDeep
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -118,14 +113,14 @@ private fun SortOptionRow(
             Text(
                 text = option.subtitle,
                 style = MaterialTheme.typography.bodyMedium,
-                color = if (isSelected) AccentGreen else InkMid,
+                color = if (isSelected) ThemeColor.AccentGreen else ThemeColor.InkMid,
             )
         }
         if (isSelected) {
             Icon(
                 imageVector = Icons.Default.Check,
                 contentDescription = null,
-                tint = AccentGreen,
+                tint = ThemeColor.AccentGreen,
                 modifier = Modifier.size(20.dp),
             )
         }
@@ -136,7 +131,7 @@ private fun SortOptionRow(
 @Composable
 private fun SortBottomSheetPreview() {
     SubscriptionListTheme {
-        Box(modifier = Modifier.background(Cream)) {
+        Box(modifier = Modifier.background(ThemeColor.Cream)) {
             SortBottomSheetContent(
                 currentOrder = SortOrder.BY_NEXT_BILLING,
                 onOrderSelected = {},

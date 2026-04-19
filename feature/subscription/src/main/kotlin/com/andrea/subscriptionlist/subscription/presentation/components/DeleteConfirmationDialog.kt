@@ -34,12 +34,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.Danger
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import java.text.NumberFormat
 
@@ -54,7 +49,7 @@ fun DeleteConfirmationDialog(
     Dialog(onDismissRequest = onDismiss) {
         Card(
             shape = RoundedCornerShape(24.dp),
-            colors = CardDefaults.cardColors(containerColor = Parchment),
+            colors = CardDefaults.cardColors(containerColor = ThemeColor.Parchment),
             elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
         ) {
             Column(
@@ -67,7 +62,7 @@ fun DeleteConfirmationDialog(
                     text = "Delete subscription?",
                     style = MaterialTheme.typography.headlineMedium,
                     fontStyle = FontStyle.Italic,
-                    color = InkDeep,
+                    color = ThemeColor.InkDeep,
                     textAlign = TextAlign.Center,
                 )
                 Spacer(Modifier.height(10.dp))
@@ -75,7 +70,7 @@ fun DeleteConfirmationDialog(
                     text = "$serviceName — $planName",
                     style = MaterialTheme.typography.bodyLarge,
                     fontWeight = FontWeight.SemiBold,
-                    color = InkDeep,
+                    color = ThemeColor.InkDeep,
                     textAlign = TextAlign.Center,
                 )
                 if (monthlyAmountTwd != null) {
@@ -87,7 +82,7 @@ fun DeleteConfirmationDialog(
                     Text(
                         text = "This removes $amountText from your total.",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = InkMid,
+                        color = ThemeColor.InkMid,
                         textAlign = TextAlign.Center,
                     )
                 }
@@ -100,8 +95,8 @@ fun DeleteConfirmationDialog(
                         onClick = onDismiss,
                         modifier = Modifier.weight(1f),
                         shape = RoundedCornerShape(50),
-                        border = BorderStroke(1.dp, BorderSubtle),
-                        colors = ButtonDefaults.outlinedButtonColors(contentColor = InkDeep),
+                        border = BorderStroke(1.dp, ThemeColor.BorderSubtle),
+                        colors = ButtonDefaults.outlinedButtonColors(contentColor = ThemeColor.InkDeep),
                     ) {
                         Text(
                             text = "Cancel",
@@ -113,8 +108,8 @@ fun DeleteConfirmationDialog(
                         modifier = Modifier.weight(1f),
                         shape = RoundedCornerShape(50),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Danger,
-                            contentColor = Parchment,
+                            containerColor = ThemeColor.Danger,
+                            contentColor = ThemeColor.Parchment,
                         ),
                     ) {
                         Text(
@@ -140,7 +135,7 @@ private fun DangerIconCircle() {
         Icon(
             imageVector = Icons.Outlined.Delete,
             contentDescription = null,
-            tint = Danger,
+            tint = ThemeColor.Danger,
             modifier = Modifier.size(28.dp),
         )
     }
@@ -152,12 +147,12 @@ private fun DeleteConfirmationDialogPreview() {
     SubscriptionListTheme {
         Box(
             modifier = Modifier
-                .background(Cream)
+                .background(ThemeColor.Cream)
                 .padding(24.dp),
         ) {
             Card(
                 shape = RoundedCornerShape(24.dp),
-                colors = CardDefaults.cardColors(containerColor = Parchment),
+                colors = CardDefaults.cardColors(containerColor = ThemeColor.Parchment),
                 elevation = CardDefaults.cardElevation(0.dp),
             ) {
                 Column(
@@ -170,7 +165,7 @@ private fun DeleteConfirmationDialogPreview() {
                         text = "Delete subscription?",
                         style = MaterialTheme.typography.headlineMedium,
                         fontStyle = FontStyle.Italic,
-                        color = InkDeep,
+                        color = ThemeColor.InkDeep,
                         textAlign = TextAlign.Center,
                     )
                     Spacer(Modifier.height(10.dp))
@@ -178,14 +173,14 @@ private fun DeleteConfirmationDialogPreview() {
                         text = "Spotify — Individual",
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.SemiBold,
-                        color = InkDeep,
+                        color = ThemeColor.InkDeep,
                         textAlign = TextAlign.Center,
                     )
                     Spacer(Modifier.height(6.dp))
                     Text(
                         text = "This removes NT$149/mo from your total.",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = InkMid,
+                        color = ThemeColor.InkMid,
                         textAlign = TextAlign.Center,
                     )
                     Spacer(Modifier.height(24.dp))
@@ -197,16 +192,16 @@ private fun DeleteConfirmationDialogPreview() {
                             onClick = {},
                             modifier = Modifier.weight(1f),
                             shape = RoundedCornerShape(50),
-                            border = BorderStroke(1.dp, BorderSubtle),
-                            colors = ButtonDefaults.outlinedButtonColors(contentColor = InkDeep),
+                            border = BorderStroke(1.dp, ThemeColor.BorderSubtle),
+                            colors = ButtonDefaults.outlinedButtonColors(contentColor = ThemeColor.InkDeep),
                         ) { Text("Cancel", style = MaterialTheme.typography.bodyLarge) }
                         Button(
                             onClick = {},
                             modifier = Modifier.weight(1f),
                             shape = RoundedCornerShape(50),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Danger,
-                                contentColor = Parchment,
+                                containerColor = ThemeColor.Danger,
+                                contentColor = ThemeColor.Parchment,
                             ),
                         ) { Text("Delete", style = MaterialTheme.typography.bodyLarge) }
                     }

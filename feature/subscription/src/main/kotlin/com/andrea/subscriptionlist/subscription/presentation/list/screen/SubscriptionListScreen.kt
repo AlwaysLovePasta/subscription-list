@@ -20,11 +20,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListNavigationEvent
 import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiEvent
 import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiState
@@ -61,7 +57,7 @@ fun SubscriptionListScreen(
     val itemCount = (uiState as? SubscriptionListUiState.Success)?.items?.size
 
     Scaffold(
-        containerColor = Cream,
+        containerColor = ThemeColor.Cream,
         topBar = {
             TopAppBar(
                 title = {
@@ -69,26 +65,26 @@ fun SubscriptionListScreen(
                         Text(
                             text = "Subscriptions",
                             style = MaterialTheme.typography.titleLarge,
-                            color = InkDeep,
+                            color = ThemeColor.InkDeep,
                         )
                         if (itemCount != null && itemCount > 0) {
                             Text(
                                 text = "$itemCount active",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = InkMid,
+                                color = ThemeColor.InkMid,
                             )
                         }
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Cream),
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = ThemeColor.Cream),
             )
         },
         floatingActionButton = {
             if (showFab) {
                 FloatingActionButton(
                     onClick = { viewModel.onEvent(SubscriptionListUiEvent.NavigateToAdd) },
-                    containerColor = AccentGreen,
-                    contentColor = Parchment,
+                    containerColor = ThemeColor.AccentGreen,
+                    contentColor = ThemeColor.Parchment,
                 ) {
                     Icon(imageVector = Icons.Default.Add, contentDescription = "Add subscription")
                 }

@@ -22,13 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreenBg
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.CreamDark
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkLight
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import java.text.NumberFormat
 
@@ -45,32 +39,32 @@ fun SpendSummaryCard(
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(containerColor = CreamDark),
+        colors = CardDefaults.cardColors(containerColor = ThemeColor.CreamDark),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
         Column(modifier = Modifier.padding(horizontal = 20.dp, vertical = 18.dp)) {
             Text(
                 text = "EST. MONTHLY SPEND",
                 style = MaterialTheme.typography.labelMedium,
-                color = InkMid,
+                color = ThemeColor.InkMid,
             )
             Spacer(Modifier.height(8.dp))
             Row(verticalAlignment = Alignment.Bottom) {
                 Text(
                     text = "NT$",
                     style = MaterialTheme.typography.titleLarge,
-                    color = InkMid,
+                    color = ThemeColor.InkMid,
                 )
                 Spacer(Modifier.width(4.dp))
                 Text(
                     text = monthly,
                     style = MaterialTheme.typography.displayLarge,
                     fontStyle = FontStyle.Italic,
-                    color = InkDeep,
+                    color = ThemeColor.InkDeep,
                 )
             }
             Spacer(Modifier.height(12.dp))
-            HorizontalDivider(color = BorderSubtle, thickness = 1.dp)
+            HorizontalDivider(color = ThemeColor.BorderSubtle, thickness = 1.dp)
             Spacer(Modifier.height(10.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -80,13 +74,13 @@ fun SpendSummaryCard(
                 Text(
                     text = "≈ NT$$yearly / year",
                     style = MaterialTheme.typography.bodySmall,
-                    color = InkMid,
+                    color = ThemeColor.InkMid,
                 )
                 if (fxSummary != null) {
                     Text(
                         text = "FX · $fxSummary",
                         style = MaterialTheme.typography.labelSmall,
-                        color = InkLight,
+                        color = ThemeColor.InkLight,
                     )
                 }
             }
@@ -100,7 +94,7 @@ private fun SpendSummaryCardPreview() {
     SubscriptionListTheme {
         Column(
             modifier = Modifier
-                .background(Cream)
+                .background(ThemeColor.Cream)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {

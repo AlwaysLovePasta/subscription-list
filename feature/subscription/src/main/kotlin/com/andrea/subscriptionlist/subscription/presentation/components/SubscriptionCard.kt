@@ -23,13 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.CardWhite
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkLight
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionItemUiModel
@@ -70,7 +64,7 @@ fun SubscriptionCard(
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = CardWhite),
+        colors = CardDefaults.cardColors(containerColor = ThemeColor.CardWhite),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
     ) {
         Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
@@ -81,12 +75,12 @@ fun SubscriptionCard(
                     Text(
                         text = item.serviceName,
                         style = MaterialTheme.typography.titleSmall,
-                        color = InkDeep,
+                        color = ThemeColor.InkDeep,
                     )
                     Text(
                         text = item.planName,
                         style = MaterialTheme.typography.bodyMedium,
-                        color = InkMid,
+                        color = ThemeColor.InkMid,
                     )
                 }
                 Spacer(Modifier.width(12.dp))
@@ -95,12 +89,12 @@ fun SubscriptionCard(
                         text = amountText,
                         style = MaterialTheme.typography.headlineSmall,
                         fontStyle = FontStyle.Italic,
-                        color = InkDeep,
+                        color = ThemeColor.InkDeep,
                     )
                     Text(
                         text = "PER MONTH",
                         style = MaterialTheme.typography.labelMedium,
-                        color = InkLight,
+                        color = ThemeColor.InkLight,
                     )
                 }
             }
@@ -110,8 +104,8 @@ fun SubscriptionCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(3.dp),
-                color = AccentGreen,
-                trackColor = BorderSubtle,
+                color = ThemeColor.AccentGreen,
+                trackColor = ThemeColor.BorderSubtle,
             )
             Spacer(Modifier.height(8.dp))
             Row(
@@ -121,12 +115,12 @@ fun SubscriptionCard(
                 Text(
                     text = priceText,
                     style = MaterialTheme.typography.labelSmall,
-                    color = InkLight,
+                    color = ThemeColor.InkLight,
                 )
                 Text(
                     text = daysText,
                     style = MaterialTheme.typography.labelSmall,
-                    color = InkLight,
+                    color = ThemeColor.InkLight,
                 )
             }
         }
@@ -172,7 +166,7 @@ private fun SubscriptionCardPreview() {
     SubscriptionListTheme {
         Column(
             modifier = Modifier
-                .background(Cream)
+                .background(ThemeColor.Cream)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {

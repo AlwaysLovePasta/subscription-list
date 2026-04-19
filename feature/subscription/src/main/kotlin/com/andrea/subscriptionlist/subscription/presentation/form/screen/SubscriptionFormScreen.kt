@@ -38,13 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.andrea.subscriptionlist.core.common.Currency
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.Danger
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.subscription.presentation.form.BillingCycleSelector
 import com.andrea.subscriptionlist.subscription.presentation.form.CurrencyDropdown
 import com.andrea.subscriptionlist.subscription.presentation.form.DateFieldButton
@@ -71,14 +65,14 @@ fun SubscriptionFormScreen(
     val breakdown = rememberBreakdown(state.price, state.currency, state.exchangeRateToTwd, state.billingCycleMonths)
 
     Scaffold(
-        containerColor = Cream,
+        containerColor = ThemeColor.Cream,
         topBar = {
             TopAppBar(
                 title = {
                     Text(
                         text = title,
                         style = MaterialTheme.typography.titleLarge,
-                        color = InkDeep,
+                        color = ThemeColor.InkDeep,
                     )
                 },
                 navigationIcon = {
@@ -91,17 +85,17 @@ fun SubscriptionFormScreen(
                         onClick = { viewModel.onEvent(SubscriptionFormUiEvent.Save) },
                         enabled = state.isFormValid && !state.isSaving,
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = AccentGreen,
-                            contentColor = Parchment,
-                            disabledContainerColor = BorderSubtle,
-                            disabledContentColor = InkMid,
+                            containerColor = ThemeColor.AccentGreen,
+                            contentColor = ThemeColor.Parchment,
+                            disabledContainerColor = ThemeColor.BorderSubtle,
+                            disabledContentColor = ThemeColor.InkMid,
                         ),
                         modifier = Modifier.padding(end = 8.dp),
                     ) {
                         Text("Save", style = MaterialTheme.typography.bodyLarge)
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = Cream),
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = ThemeColor.Cream),
             )
         },
     ) { innerPadding ->
@@ -122,7 +116,7 @@ fun SubscriptionFormScreen(
                 OutlinedTextField(
                     value = state.serviceName,
                     onValueChange = { viewModel.onEvent(SubscriptionFormUiEvent.ServiceNameChanged(it)) },
-                    placeholder = { Text("e.g. Netflix", color = InkMid) },
+                    placeholder = { Text("e.g. Netflix", color = ThemeColor.InkMid) },
                     textStyle = MaterialTheme.typography.bodyLarge,
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth(),
@@ -133,7 +127,7 @@ fun SubscriptionFormScreen(
                 OutlinedTextField(
                     value = state.planName,
                     onValueChange = { viewModel.onEvent(SubscriptionFormUiEvent.PlanNameChanged(it)) },
-                    placeholder = { Text("e.g. Premium 4K", color = InkMid) },
+                    placeholder = { Text("e.g. Premium 4K", color = ThemeColor.InkMid) },
                     textStyle = MaterialTheme.typography.bodyLarge,
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth(),
@@ -148,7 +142,7 @@ fun SubscriptionFormScreen(
                     OutlinedTextField(
                         value = state.price,
                         onValueChange = { viewModel.onEvent(SubscriptionFormUiEvent.PriceChanged(it)) },
-                        placeholder = { Text("0.00", color = InkMid) },
+                        placeholder = { Text("0.00", color = ThemeColor.InkMid) },
                         textStyle = MaterialTheme.typography.bodyLarge,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                         singleLine = true,
@@ -185,8 +179,8 @@ fun SubscriptionFormScreen(
                 OutlinedButton(
                     onClick = { viewModel.onEvent(SubscriptionFormUiEvent.Delete) },
                     modifier = Modifier.fillMaxWidth(),
-                    border = BorderStroke(1.dp, Danger),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Danger),
+                    border = BorderStroke(1.dp, ThemeColor.Danger),
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = ThemeColor.Danger),
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.Delete,
@@ -212,7 +206,7 @@ private fun FormField(
         Text(
             text = "$label *",
             style = MaterialTheme.typography.bodyMedium,
-            color = InkDeep,
+            color = ThemeColor.InkDeep,
         )
         content()
     }

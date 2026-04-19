@@ -24,18 +24,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreenBg
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 
 @Composable
 internal fun SubscriptionEmptyContent(onAddClick: () -> Unit, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(Cream)
+            .background(ThemeColor.Cream)
             .padding(horizontal = 32.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -53,7 +49,7 @@ internal fun SubscriptionEmptyContent(onAddClick: () -> Unit, modifier: Modifier
         Text(
             text = "Track all your recurring services in one place.",
             style = MaterialTheme.typography.bodyMedium,
-            color = InkMid,
+            color = ThemeColor.InkMid,
             textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(32.dp))
@@ -61,8 +57,8 @@ internal fun SubscriptionEmptyContent(onAddClick: () -> Unit, modifier: Modifier
             onClick = onAddClick,
             shape = MaterialTheme.shapes.extraLarge,
             colors = ButtonDefaults.buttonColors(
-                containerColor = AccentGreen,
-                contentColor = Parchment,
+                containerColor = ThemeColor.AccentGreen,
+                contentColor = ThemeColor.Parchment,
             ),
         ) {
             Text(text = "Add your first", style = MaterialTheme.typography.bodyLarge)
@@ -76,13 +72,13 @@ private fun DocumentPlusIcon() {
         modifier = Modifier
             .size(80.dp)
             .clip(CircleShape)
-            .background(AccentGreenBg),
+            .background(ThemeColor.AccentGreenBg),
         contentAlignment = Alignment.Center,
     ) {
         Icon(
             imageVector = Icons.Outlined.Add,
             contentDescription = null,
-            tint = AccentGreen,
+            tint = ThemeColor.AccentGreen,
             modifier = Modifier.size(40.dp),
         )
     }

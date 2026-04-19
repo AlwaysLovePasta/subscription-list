@@ -22,11 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.BorderMid
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import com.andrea.subscriptionlist.subscription.presentation.list.SortOrder
 
@@ -45,30 +41,30 @@ fun SortPill(
         onClick = onClick,
         modifier = modifier,
         shape = RoundedCornerShape(50),
-        border = BorderStroke(1.dp, BorderMid),
+        border = BorderStroke(1.dp, ThemeColor.BorderMid),
         colors = ButtonDefaults.outlinedButtonColors(
-            containerColor = Parchment,
-            contentColor = InkDeep,
+            containerColor = ThemeColor.Parchment,
+            contentColor = ThemeColor.InkDeep,
         ),
         contentPadding = PaddingValues(horizontal = 14.dp, vertical = 8.dp),
     ) {
         Text(
             text = "Sort by ",
             style = MaterialTheme.typography.bodyMedium,
-            color = InkMid,
+            color = ThemeColor.InkMid,
         )
         Text(
             text = label,
             style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.SemiBold,
-            color = InkDeep,
+            color = ThemeColor.InkDeep,
         )
         Spacer(Modifier.width(2.dp))
         Icon(
             imageVector = Icons.Default.ArrowDropDown,
             contentDescription = null,
             modifier = Modifier.size(18.dp),
-            tint = InkMid,
+            tint = ThemeColor.InkMid,
         )
     }
 }
@@ -79,7 +75,7 @@ private fun SortPillPreview() {
     SubscriptionListTheme {
         Column(
             modifier = Modifier
-                .background(Cream)
+                .background(ThemeColor.Cream)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {

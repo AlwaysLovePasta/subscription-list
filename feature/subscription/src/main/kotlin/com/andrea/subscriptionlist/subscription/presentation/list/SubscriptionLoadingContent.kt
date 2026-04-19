@@ -7,17 +7,16 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.Cream
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 
 @Composable
 internal fun SubscriptionLoadingContent(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Cream),
+            .background(ThemeColor.Cream),
         contentAlignment = Alignment.Center,
     ) {
-        CircularProgressIndicator(color = AccentGreen)
+        CircularProgressIndicator(color = ThemeColor.AccentGreen)
     }
 }

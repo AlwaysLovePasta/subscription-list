@@ -15,10 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreenBg
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.InkLight
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import java.text.NumberFormat
 
 @Composable
@@ -32,14 +29,14 @@ internal fun MonthlyAverageCard(
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(containerColor = AccentGreenBg),
+        colors = CardDefaults.cardColors(containerColor = ThemeColor.AccentGreenBg),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
         Column(modifier = Modifier.padding(horizontal = 20.dp, vertical = 16.dp)) {
             Text(
                 text = "MONTHLY AVERAGE (TWD)",
                 style = MaterialTheme.typography.labelMedium,
-                color = InkMid,
+                color = ThemeColor.InkMid,
             )
             Spacer(Modifier.height(8.dp))
             Text(
@@ -47,14 +44,14 @@ internal fun MonthlyAverageCard(
                        else "≈ NT$ — /mo",
                 style = MaterialTheme.typography.headlineMedium,
                 fontStyle = FontStyle.Italic,
-                color = InkDeep,
+                color = ThemeColor.InkDeep,
             )
             if (breakdown != null) {
                 Spacer(Modifier.height(4.dp))
                 Text(
                     text = breakdown,
                     style = MaterialTheme.typography.labelSmall,
-                    color = InkLight,
+                    color = ThemeColor.InkLight,
                 )
             }
         }

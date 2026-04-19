@@ -20,10 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.AccentGreen
-import com.andrea.subscriptionlist.core.ui.theme.BorderSubtle
-import com.andrea.subscriptionlist.core.ui.theme.InkDeep
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 
 private val presets = listOf(1 to "Monthly", 3 to "Quarterly", 6 to "Half-yearly", 12 to "Yearly")
 
@@ -48,16 +45,16 @@ internal fun BillingCycleSelector(
                     onClick = { onMonthsChanged(months) },
                     label = { Text(label, style = MaterialTheme.typography.bodyMedium) },
                     colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = AccentGreen,
-                        selectedLabelColor = Parchment,
-                        containerColor = Parchment,
-                        labelColor = InkDeep,
+                        selectedContainerColor = ThemeColor.AccentGreen,
+                        selectedLabelColor = ThemeColor.Parchment,
+                        containerColor = ThemeColor.Parchment,
+                        labelColor = ThemeColor.InkDeep,
                     ),
                     border = FilterChipDefaults.filterChipBorder(
                         enabled = true,
                         selected = selected,
-                        borderColor = BorderSubtle,
-                        selectedBorderColor = AccentGreen,
+                        borderColor = ThemeColor.BorderSubtle,
+                        selectedBorderColor = ThemeColor.AccentGreen,
                     ),
                 )
             }
@@ -90,7 +87,7 @@ internal fun BillingCycleSelector(
                     }
                 },
             )
-            Text("mo", style = MaterialTheme.typography.bodyLarge, color = InkDeep)
+            Text("mo", style = MaterialTheme.typography.bodyLarge, color = ThemeColor.InkDeep)
         }
     }
 }

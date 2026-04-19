@@ -18,8 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.Parchment
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import kotlin.math.abs
 
@@ -50,7 +49,7 @@ fun ServiceAvatar(
         Text(
             text = serviceName.take(1).uppercase(),
             style = MaterialTheme.typography.titleMedium,
-            color = Parchment,
+            color = ThemeColor.Parchment,
         )
     }
 }
@@ -61,7 +60,7 @@ private fun ServiceAvatarPreview() {
     SubscriptionListTheme {
         Row(
             modifier = Modifier
-                .background(Cream)
+                .background(ThemeColor.Cream)
                 .padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {

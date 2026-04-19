@@ -11,22 +11,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.ui.theme.Cream
-import com.andrea.subscriptionlist.core.ui.theme.InkMid
+import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 
 @Composable
 internal fun SubscriptionErrorContent(message: String, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Cream)
+            .background(ThemeColor.Cream)
             .padding(32.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(
             text = message.ifBlank { "Something went wrong." },
             style = MaterialTheme.typography.bodyLarge,
-            color = InkMid,
+            color = ThemeColor.InkMid,
             textAlign = TextAlign.Center,
         )
     }
