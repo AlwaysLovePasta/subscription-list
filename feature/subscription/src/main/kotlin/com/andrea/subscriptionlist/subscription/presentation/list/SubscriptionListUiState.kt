@@ -9,6 +9,7 @@ sealed interface SubscriptionListUiState {
     data class Success(
         val items: List<SubscriptionItemUiModel>,
         val totalMonthlyTwd: Double,
+        val fxSummary: String?,
         val sortOrder: SortOrder,
         val rateUpdatedAt: Instant?,
         val rateError: Boolean = false,

@@ -11,19 +11,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.subscription.presentation.components.SortBottomSheet
 import com.andrea.subscriptionlist.subscription.presentation.components.SortPill
 import com.andrea.subscriptionlist.subscription.presentation.components.SpendSummaryCard
 import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionCard
-import java.text.NumberFormat
 
 @Composable
 internal fun SubscriptionListContent(
@@ -32,20 +29,6 @@ internal fun SubscriptionListContent(
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     var showSortSheet by rememberSaveable { mutableStateOf(false) }
-
-    val fxSummary = remember(state.items) {
-        val nf = NumberFormat.getNumberInstance().apply { maximumFractionDigits = 1 }
-        state.items
-            .filter { it.currency != Currency.TWD }
-            .groupBy { it.currency.name }
-            .entries
-            .sortedBy { it.key }
-            .map { (code, items) ->
-                "$code ${nf.format(items.sumOf { it.price / it.billingCycleMonths })}"
-            }
-            .takeIf { it.isNotEmpty() }
-            ?.joinToString(" · ")
-    }
 
     LazyColumn(
         contentPadding = PaddingValues(
@@ -59,7 +42,7 @@ internal fun SubscriptionListContent(
         item {
             SpendSummaryCard(
                 totalMonthlyTwd = state.totalMonthlyTwd,
-                fxSummary = fxSummary,
+                fxSummary = state.fxSummary,
                 modifier = Modifier.fillMaxWidth(),
             )
         }

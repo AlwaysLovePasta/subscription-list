@@ -2,10 +2,12 @@ package com.andrea.subscriptionlist.subscription.presentation.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.exchangerate.domain.model.ExchangeRate
 import com.andrea.subscriptionlist.exchangerate.domain.usecase.GetExchangeRatesUseCase
 import com.andrea.subscriptionlist.subscription.domain.model.Subscription
 import com.andrea.subscriptionlist.subscription.domain.usecase.CalculateMonthlyAverageUseCase
+import java.text.NumberFormat
 import com.andrea.subscriptionlist.subscription.domain.usecase.DeleteSubscriptionUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.GetSubscriptionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -66,6 +68,7 @@ class SubscriptionListViewModel @Inject constructor(
                 SubscriptionListUiState.Success(
                     items = items,
                     totalMonthlyTwd = items.sumOf { it.monthlyAmountTwd ?: 0.0 },
+                    fxSummary = buildFxSummary(subscriptions, rate),
                     sortOrder = sortOrder,
                     rateUpdatedAt = rate?.updatedAt,
                     rateError = rateError,
@@ -91,6 +94,19 @@ class SubscriptionListViewModel @Inject constructor(
 
     private fun navigate(event: SubscriptionListNavigationEvent) {
         viewModelScope.launch { _navigationEvent.emit(event) }
+    }
+
+    private fun buildFxSummary(subscriptions: List<Subscription>, rate: ExchangeRate?): String? {
+        if (rate == null) return null
+        val nf = NumberFormat.getNumberInstance().apply { maximumFractionDigits = 1 }
+        return subscriptions
+            .map { it.currency }
+            .filter { it != Currency.TWD }
+            .distinct()
+            .sorted()
+            .mapNotNull { currency -> rate.rates[currency]?.let { "${currency.name} ${nf.format(it)}" } }
+            .takeIf { it.isNotEmpty() }
+            ?.joinToString(" · ")
     }
 
     private fun Subscription.toUiModel(rate: ExchangeRate?) = SubscriptionItemUiModel(
