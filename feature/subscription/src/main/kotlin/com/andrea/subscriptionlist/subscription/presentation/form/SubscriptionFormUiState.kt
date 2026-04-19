@@ -16,6 +16,7 @@ data class SubscriptionFormUiState(
     val isFormValid: Boolean = false,
     val isSaving: Boolean = false,
     val isDone: Boolean = false,
+    val showDeleteConfirmation: Boolean = false,
 )
 
 enum class FormMode { ADD, EDIT }

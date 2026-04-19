@@ -12,4 +12,6 @@ sealed interface SubscriptionFormUiEvent {
     data class NextBillingDateChanged(val date: LocalDate) : SubscriptionFormUiEvent
     data object Save : SubscriptionFormUiEvent
     data object Delete : SubscriptionFormUiEvent
+    data object ConfirmDelete : SubscriptionFormUiEvent
+    data object DismissDeleteConfirmation : SubscriptionFormUiEvent
 }

@@ -55,7 +55,9 @@ class SubscriptionFormViewModel @Inject constructor(
         is SubscriptionFormUiEvent.BillingCycleChanged -> updateField { copy(billingCycleMonths = event.months) }
         is SubscriptionFormUiEvent.NextBillingDateChanged -> updateField { copy(nextBillingDate = event.date) }
         SubscriptionFormUiEvent.Save -> save()
-        SubscriptionFormUiEvent.Delete -> delete()
+        SubscriptionFormUiEvent.Delete -> _uiState.update { it.copy(showDeleteConfirmation = true) }
+        SubscriptionFormUiEvent.ConfirmDelete -> delete()
+        SubscriptionFormUiEvent.DismissDeleteConfirmation -> _uiState.update { it.copy(showDeleteConfirmation = false) }
     }
 
     private fun loadExchangeRate() {

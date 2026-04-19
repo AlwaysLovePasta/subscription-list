@@ -39,6 +39,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
+import com.andrea.subscriptionlist.subscription.presentation.components.DeleteConfirmationDialog
 import com.andrea.subscriptionlist.subscription.presentation.form.BillingCycleSelector
 import com.andrea.subscriptionlist.subscription.presentation.form.CurrencyDropdown
 import com.andrea.subscriptionlist.subscription.presentation.form.DateFieldButton
@@ -193,6 +194,16 @@ fun SubscriptionFormScreen(
 
             Spacer(Modifier.height(16.dp))
         }
+    }
+
+    if (state.showDeleteConfirmation) {
+        DeleteConfirmationDialog(
+            serviceName = state.serviceName,
+            planName = state.planName,
+            monthlyAmountTwd = state.monthlyAmountTwd,
+            onConfirm = { viewModel.onEvent(SubscriptionFormUiEvent.ConfirmDelete) },
+            onDismiss = { viewModel.onEvent(SubscriptionFormUiEvent.DismissDeleteConfirmation) },
+        )
     }
 }
 
