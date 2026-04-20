@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.form
+package com.andrea.subscriptionlist.subscription.presentation.stateholders
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel

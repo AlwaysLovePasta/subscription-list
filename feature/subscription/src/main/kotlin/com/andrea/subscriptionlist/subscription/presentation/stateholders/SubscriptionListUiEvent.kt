@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list
+package com.andrea.subscriptionlist.subscription.presentation.stateholders
 
 sealed interface SubscriptionListUiEvent {
     data object Refresh : SubscriptionListUiEvent

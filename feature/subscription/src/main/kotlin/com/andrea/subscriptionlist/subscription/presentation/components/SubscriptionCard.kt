@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
 import com.andrea.subscriptionlist.core.common.Currency
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionItemUiModel
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionItemUiModel
 import java.text.NumberFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

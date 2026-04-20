@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.form
+package com.andrea.subscriptionlist.subscription.presentation.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

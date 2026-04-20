@@ -8,11 +8,11 @@ import com.andrea.subscriptionlist.subscription.domain.model.Subscription
 import com.andrea.subscriptionlist.subscription.domain.usecase.CalculateMonthlyAverageUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.DeleteSubscriptionUseCase
 import com.andrea.subscriptionlist.subscription.domain.usecase.GetSubscriptionsUseCase
-import com.andrea.subscriptionlist.subscription.presentation.list.SortOrder
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListNavigationEvent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiEvent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiState
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListViewModel
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SortOrder
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListNavigationEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiState
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListViewModel
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify

@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
 import com.andrea.subscriptionlist.core.ui.theme.SubscriptionListTheme
-import com.andrea.subscriptionlist.subscription.presentation.list.SortOrder
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SortOrder
 
 @Composable
 fun SortPill(

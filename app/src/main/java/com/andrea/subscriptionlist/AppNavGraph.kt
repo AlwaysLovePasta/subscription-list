@@ -5,8 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.andrea.subscriptionlist.subscription.presentation.form.screen.SubscriptionFormScreen
-import com.andrea.subscriptionlist.subscription.presentation.list.screen.SubscriptionListScreen
+import com.andrea.subscriptionlist.subscription.presentation.screens.SubscriptionFormScreen
+import com.andrea.subscriptionlist.subscription.presentation.screens.SubscriptionListScreen
 import kotlinx.serialization.Serializable
 
 @Serializable data object SubscriptionListRoute

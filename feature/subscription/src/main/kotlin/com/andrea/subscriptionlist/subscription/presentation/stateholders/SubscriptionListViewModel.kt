@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list
+package com.andrea.subscriptionlist.subscription.presentation.stateholders
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list
+package com.andrea.subscriptionlist.subscription.presentation.stateholders
 
 import com.andrea.subscriptionlist.core.common.Currency
 import java.time.Instant

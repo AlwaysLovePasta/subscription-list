@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list
+package com.andrea.subscriptionlist.subscription.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,10 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.andrea.subscriptionlist.subscription.presentation.components.SortBottomSheet
-import com.andrea.subscriptionlist.subscription.presentation.components.SortPill
-import com.andrea.subscriptionlist.subscription.presentation.components.SpendSummaryCard
-import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionCard
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiState
 
 @Composable
 internal fun SubscriptionListContent(

@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list
+package com.andrea.subscriptionlist.subscription.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

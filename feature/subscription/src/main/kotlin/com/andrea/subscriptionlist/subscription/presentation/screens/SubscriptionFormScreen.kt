@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.form.screen
+package com.andrea.subscriptionlist.subscription.presentation.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
@@ -39,14 +39,14 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.andrea.subscriptionlist.core.common.Currency
 import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
+import com.andrea.subscriptionlist.subscription.presentation.components.BillingCycleSelector
+import com.andrea.subscriptionlist.subscription.presentation.components.CurrencyDropdown
+import com.andrea.subscriptionlist.subscription.presentation.components.DateFieldButton
 import com.andrea.subscriptionlist.subscription.presentation.components.DeleteConfirmationDialog
-import com.andrea.subscriptionlist.subscription.presentation.form.BillingCycleSelector
-import com.andrea.subscriptionlist.subscription.presentation.form.CurrencyDropdown
-import com.andrea.subscriptionlist.subscription.presentation.form.DateFieldButton
-import com.andrea.subscriptionlist.subscription.presentation.form.FormMode
-import com.andrea.subscriptionlist.subscription.presentation.form.MonthlyAverageCard
-import com.andrea.subscriptionlist.subscription.presentation.form.SubscriptionFormUiEvent
-import com.andrea.subscriptionlist.subscription.presentation.form.SubscriptionFormViewModel
+import com.andrea.subscriptionlist.subscription.presentation.components.MonthlyAverageCard
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.FormMode
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionFormUiEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionFormViewModel
 import java.text.NumberFormat
 
 @OptIn(ExperimentalMaterial3Api::class)

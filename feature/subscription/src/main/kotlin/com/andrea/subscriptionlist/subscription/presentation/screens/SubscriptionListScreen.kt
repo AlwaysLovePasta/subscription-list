@@ -1,4 +1,4 @@
-package com.andrea.subscriptionlist.subscription.presentation.list.screen
+package com.andrea.subscriptionlist.subscription.presentation.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -21,14 +21,14 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.flowWithLifecycle
 import com.andrea.subscriptionlist.core.ui.theme.ThemeColor
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListNavigationEvent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiEvent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListUiState
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListViewModel
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionEmptyContent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionErrorContent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionListContent
-import com.andrea.subscriptionlist.subscription.presentation.list.SubscriptionLoadingContent
+import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionEmptyContent
+import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionErrorContent
+import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionListContent
+import com.andrea.subscriptionlist.subscription.presentation.components.SubscriptionLoadingContent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListNavigationEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiEvent
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListUiState
+import com.andrea.subscriptionlist.subscription.presentation.stateholders.SubscriptionListViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
